@@ -920,3 +920,40 @@ body {
         padding: 8px 16px;
     }
 }
+/* ========================================
+   КАРТИНКА НЕ ЗАВИСИТ ОТ ТЕКСТА
+   ======================================== */
+
+/* Контейнер: текст занимает всю ширину, картинка поверх */
+.program-with-rings {
+    position: relative;
+    display: block;
+    width: 100%;
+    min-height: 100px; /* чтобы картинка не вылезала за пределы */
+}
+
+/* Текст — обычный блок, занимает всю ширину */
+.program-content {
+    width: 100%;
+    padding-right: 30px; /* чтобы текст не наезжал на картинку */
+    box-sizing: border-box;
+}
+
+/* Картинка — абсолютно поверх текста, привязана к правому краю */
+.rings-image {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%); /* выравнивание по центру по вертикали */
+    width: 120px;
+    max-width: 30%;
+    pointer-events: none; /* чтобы картинка не мешала кликам */
+    z-index: 5;
+}
+
+.rings-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transform: rotate(9deg);
+}
